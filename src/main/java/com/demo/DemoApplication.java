@@ -10,7 +10,7 @@ public class DemoApplication {
 
     @GetMapping("/")
     public String hello() {
-        return "Pavan updated CI/CD Pipeline Working 🚀";
+        return "Karthik updated CI/CD Pipeline Working 🚀";
     }
 
     public static void main(String[] args) {
