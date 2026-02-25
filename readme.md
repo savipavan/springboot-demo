@@ -16,7 +16,7 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
     rm kubectl
 
 USER jenkins
-
+```
 docker build -t jenkins-docker-k8s .
 
 docker run -d --name jenkins  -u root -p 8080:8080 -p 50000:50000  -v jenkins_home:/var/jenkins_home   -v //var/run/docker.sock:/var/run/docker.sock   -v %USERPROFILE%\.kube:/root/.kube  jenkins-docker-k8s
@@ -71,5 +71,5 @@ pipeline {
         }
     }
 }
-
+```
 
