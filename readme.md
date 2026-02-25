@@ -1,3 +1,6 @@
+pre-requisites:
+Docker desktop to be installed
+
 Create 
 Dockerfile
 ```dockerfile
@@ -20,6 +23,11 @@ USER jenkins
 docker build -t jenkins-docker-k8s .
 
 docker run -d --name jenkins  -u root -p 8080:8080 -p 50000:50000  -v jenkins_home:/var/jenkins_home   -v //var/run/docker.sock:/var/run/docker.sock   -v %USERPROFILE%\.kube:/root/.kube  jenkins-docker-k8s
+
+Access URL with localhost:8080 --> enter jenkins password --> install suggested plugins
+``` Jenkins password
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+```
 
 Create pipeline 
 
@@ -72,4 +80,4 @@ pipeline {
     }
 }
 ```
-
+Access application using local URL : http://localhost:30007/
